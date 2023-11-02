@@ -16,8 +16,16 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
 </head>
 <body>
     <?php 
-    echo "Coucou";
-    //Affichage tableau 
+    echo "Coucou <br>";
+    
+    $etudiant1 = new Etudiant;
+    $etudiant1->setNom("Antony");
+    $etudiant1->setAdresse("rue du  Village, 50");
+    $etudiant1->setCoursSuivis(["Math","Français"]);
+    $etudiant1->setDateInscription(new DateTime('2023-10-01'));
+    // Affichage de ce que retourne la méthode resume(){}
+    echo $etudiant1->resume(); 
+    
 
 
     ?>

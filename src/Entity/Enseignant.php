@@ -1,11 +1,13 @@
 <?php 
 namespace Angelique\PooHeritage\Entity;
 
+use DateTime;
+
 final class Enseignant extends Personne implements Affichable
 {
-    private $coursDonnes;
-    private $entreeService;
-    private $anciennete;
+    private array $coursDonnes;
+    private DateTime $entreeService;
+    private int $anciennete;
 
     // Accesseurs et mutateurs correspondants
     public function setCoursDonnes($coursDonnes)

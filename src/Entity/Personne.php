@@ -1,6 +1,6 @@
 <?php 
 // namespace
-
+namespace Angelique\PooHeritage\Entity;
 // classe MÈRE
 abstract class Personne 
 {
@@ -17,11 +17,18 @@ abstract class Personne
     {
         $this->nom = $nom;
     }
-    
+    public function getNom()
+    {
+        return $this->nom;
+    }
 
     public function setPrenom($prenom)
     {
         $this->prenom = $prenom;
+    }
+    public function getPrenom()
+    {
+        return $this->prenom;
     }
     
     public function setAdresse($adresse)
@@ -64,17 +71,8 @@ abstract class Personne
     Lors de l’héritage d’une classe abstraite, les méthodes déclarées comme abstraites dans la classe parent doivent obligatoirement être définies dans la classe enfant avec des signatures (nom et paramètres) correspondantes.
 
     */
-    // méthode abstraite qui retourne un résumé des infos de l'objet
+    // méthode abstraite qui retourne un résumé des infos de l'objet et c'est dans la class fille qu'on va indiquer le code de la fonction
     abstract public function resume();
-    public function getNom(){
-        return " La personne dont le nom est " .  strtoupper($this->nom);
-    }
-    public function getPrenom(){
-        return " et le prénom est " . $this->prenom;
-    }
 
-    /*
-        echo " La personne dont le nom est " . $this->nom . " et le prénom est " . $this->prenom . " habite à " . $this->adresse . " au / à le / à la " . $this->pays . " et travaille pour " . $this->societe";
-    */
 }
 

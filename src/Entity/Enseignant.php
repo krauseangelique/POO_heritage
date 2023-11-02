@@ -8,22 +8,30 @@ final class Enseignant extends Personne implements Affichable
     private $anciennete;
 
     // Accesseurs et mutateurs correspondants
-    public function setNom($nom)
+    public function setCoursDonnes($coursDonnes)
     {
-        $this->nom = $nom;
+        $this->coursDonnes = $coursDonnes;
     }
-    public function getNom()
+    public function getCoursDonnes()
     {
-        return $this->nom;
+        return $this->coursDonnes;
     }
 
-    public function setPrenom($prenom)
+    public function setEntreeService($entreeService)
     {
-        $this->prenom = $prenom;
+        $this->entreeService = $entreeService;
     }
-    public function getPrenom()
+    public function getEntreeService()
     {
-        return $this->prenom;
+        return $this->entreeService;
+    }
+    public function setAnciennete($anciennete)
+    {
+        $this->anciennete;
+    }
+    public function getAnciennete()
+    {
+        return $this->anciennete;
     }
 
     public function resume(){

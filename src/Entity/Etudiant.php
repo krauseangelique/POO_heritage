@@ -8,22 +8,30 @@ final class Etudiant extends Personne implements Affichable {
     private $dateInscription;
 
     // Accesseurs et mutateurs correspondants
-    public function setCoursSuivis($nom)
+    public function setCoursSuivis($coursSuivis)
     {
-        $this->nom = $nom;
+        $this->coursSuivis = $coursSuivis;
     }
-    public function getNom()
+    public function getCoursSuivis()
     {
-        return $this->nom;
+        return $this->coursSuivis;
     }
 
-    public function setPrenom($prenom)
+    public function setNiveau($Niveau)
     {
-        $this->prenom = $prenom;
+        $this->niveau = $Niveau;
     }
-    public function getPrenom()
+    public function getNiveau()
     {
-        return $this->prenom;
+        return $this->niveau;
+    }
+    public function setDateInscription($dateInscription)
+    {
+        $this->dateInscription = $dateInscription;
+    }
+    public function getDateInscription()
+    {
+        return $this->dateInscription;
     }
 
     public function resume(){

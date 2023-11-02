@@ -2,6 +2,7 @@
 use Angelique\PooHeritage\Entity\Personne;
 use Angelique\PooHeritage\Entity\Etudiant;
 use Angelique\PooHeritage\Entity\Enseignant;
+use Angelique\PooHeritage\Entity\Affichable;
 require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
 
 ?>

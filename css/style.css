@@ -1,0 +1,8 @@
+body{
+    margin: 0;
+    background-color: bisque;
+    color: rgb(66, 18, 18);
+    box-sizing: border-box;
+    height: 100vh;
+    border: 1px solid brown;
+}

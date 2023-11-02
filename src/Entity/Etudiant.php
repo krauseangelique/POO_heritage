@@ -11,7 +11,7 @@ final class Etudiant extends Personne implements Affichable {
     private DateTime $dateInscription;
 
     // Accesseurs et mutateurs correspondants
-    public function setCoursSuivis($coursSuivis)
+    public function setCoursSuivis(array $coursSuivis)
     {
         $this->coursSuivis = $coursSuivis;
     }
@@ -31,7 +31,7 @@ final class Etudiant extends Personne implements Affichable {
         return $result;
     }
 
-    public function setNiveau($Niveau)
+    public function setNiveau(string $Niveau)
     {
         $this->niveau = $Niveau;
     }
@@ -39,25 +39,42 @@ final class Etudiant extends Personne implements Affichable {
     {
         return $this->niveau;
     }
-    public function setDateInscription($dateInscription)
+    public function setDateInscription(DateTime $dateInscription)
     {
         $this->dateInscription = $dateInscription;
     }
+    /**
+     * @var \DateTime $dateInscription
+     */
+    /*
+$date = new DateTimeImmutable('2000-01-01');
+echo $date->format('Y-m-d H:i:s');
+    */
     public function getDateInscription()
     {
-        return $this->dateInscription;
+        return $this->dateInscription->format('d-m-Y'); // objet de type DateTime auquel j'ajoute format (chainage de méthodes)
     }
 
     public function resume(){
         // le nom est repris dans la class mère donc j'indique parent devant le getNom()
         // le cours suivi se trouve dans la même class fille donc j'indique self::getCoursSuivis()
-        return "la  personne " .  parent::getNom(). " habite à " . parent::getAdresse() . " et il suit le(s) cour(s)" . self::getCoursSuivis();
+        return "la  personne " .  parent::getNom(). " habite à " . parent::getAdresse() . " et il suit le(s) cour(s)" . self::getCoursSuivis() . " l'étudiant s'est inscrit le " . self::getDateInscription() ;
     }
 
     // methode __toString
     public function __toString()
     {
-        echo "Ceci est la class fille Etudiant";
+        return "Ceci est la class fille Etudiant ". self::resume();
     }
 
+    // implement Affichable
+    public function afficheTableau()
+    {
+        return "suit le(s) cour(s)" . self::getCoursSuivis();
+    }
+
+    public function afficheLigne()
+    {
+
+    }
 }

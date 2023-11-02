@@ -45,4 +45,13 @@ final class Enseignant extends Personne implements Affichable
     {
         echo "Ceci est la class fille Enseignant";
     }
+
+    // implement Affichable
+    public function afficheTableau()
+    {
+    }
+
+    public function afficheLigne()
+    {
+    }
 }

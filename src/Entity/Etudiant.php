@@ -1,7 +1,7 @@
 <?php 
 namespace Angelique\PooHeritage\Entity;
 
-final class Etudiant extends Personne {
+final class Etudiant extends Personne implements Affichable {
     private $coursSuivis;
    //  private (string) $niveau; 
     private $niveau;
@@ -27,7 +27,7 @@ final class Etudiant extends Personne {
     }
 
     public function resume(){
-        return "la  personne " . $this->nom . " habite à " . $this->adresse;
+        return "la  personne " . $this->nom . " habite à " . $this->adresse . " et il suit le(s) cour(s)" .$this->coursSuivis;
     }
 
     // methode __toString

@@ -1,6 +1,8 @@
 <?php 
-// use
-// require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
+use Angelique\PooHeritage\Entity\Personne;
+use Angelique\PooHeritage\Entity\Etudiant;
+use Angelique\PooHeritage\Entity\Enseignant;
+require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
 
 ?>
 <!DOCTYPE html>
@@ -14,6 +16,8 @@
 <body>
     <?php 
     echo "Coucou";
+    //Affichage tableau 
+
 
     ?>
 </body>

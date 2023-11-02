@@ -28,6 +28,12 @@ final class Etudiant extends Personne {
 
     public function resume(){
         return "la  personne " . $this->nom . " habite à " . $this->adresse;
-
     }
+
+    // methode __toString
+    public function __toString()
+    {
+        echo "Ceci est la class fille Etudiant";
+    }
+
 }

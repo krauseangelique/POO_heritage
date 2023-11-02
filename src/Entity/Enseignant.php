@@ -30,4 +30,9 @@ final class Enseignant extends Personne
         return "la  personne " . $this->nom . " habite à " . $this->adresse;
 
     }
+    // methode __toString
+    public function __toString()
+    {
+        echo "Ceci est la class fille Enseignant";
+    }
 }

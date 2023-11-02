@@ -1,5 +1,4 @@
 <?php 
-
 namespace Angelique\PooHeritage\Entity;
 
 final class Enseignant extends Personne implements Affichable

@@ -1,0 +1,17 @@
+{
+    "name": "angelique/poo_heritage",
+    "description": "exercice examen",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Angelique\\PooHeritage\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "angelique KRAUSE",
+            "email": "krause_angelique@hotmail.com"
+        }
+    ],
+    "require": {}
+}

@@ -22,7 +22,7 @@ final class Etudiant extends Personne implements Affichable {
         // variable résultat
         $result = "";
         foreach ($this->coursSuivis as $key => $value) {
-
+            // concatenation pour éviter écrasement 
             $result .= $value . ' ';
 
         }
@@ -42,9 +42,7 @@ final class Etudiant extends Personne implements Affichable {
     {
         $this->dateInscription = $dateInscription;
     }
-    /**
-     * @var \DateTime $dateInscription
-     */
+
     /* Doc. Fomat date
         $date = new DateTimeImmutable('2000-01-01');
         echo $date->format('Y-m-d H:i:s');
@@ -63,7 +61,7 @@ final class Etudiant extends Personne implements Affichable {
     // methode __toString
     public function __toString()
     {
-        return "<br>Ceci est la class fille Etudiant,  ". self::resume();
+        return "<br>Ceci est la class fille Etudiant,  " . self::resume();
     }
 
     // implement interface Affichable

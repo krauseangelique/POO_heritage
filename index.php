@@ -18,16 +18,24 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     <?php 
     echo "Coucou <br>";
     
+    // j'instancie un nouvel objet
     $etudiant1 = new Etudiant;
     $etudiant1->setNom("Antony");
     $etudiant1->setAdresse("rue du  Village, 50");
     $etudiant1->setCoursSuivis(["Math","Français"]);
     $etudiant1->setDateInscription(new DateTime('2023-10-01'));
+
     // Affichage de ce que retourne la méthode resume(){}
     echo $etudiant1->resume();
     // ON ne peut pas faire l'écho d'un objet SAUF si la méthode __toString() est implémentée
     echo $etudiant1;
     echo $etudiant1->afficheTableau(); 
+
+    echo "<br><br> Coucou l'enseignant ! <br>";
+
+    // j'instancie un nouvel objet
+    $enseignant1 = new Enseignant;
+    $enseignant1->setNom("Cesar");
     
 
 

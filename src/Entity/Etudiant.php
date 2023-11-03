@@ -55,19 +55,19 @@ final class Etudiant extends Personne implements Affichable {
     public function resume(){
         // le nom est repris dans la class mère donc j'indique parent devant le getNom()
         // le cours suivi se trouve dans la même class fille donc j'indique self::getCoursSuivis()
-        return "l'étudiant' " .  parent::getNom(). " habite à " . parent::getAdresse() . "<br> L'étudiant' suit le(s) cour(s)" . self::getCoursSuivis() . " .<br>L'étudiant s'est inscrit le " . self::getDateInscription() ;
+        return "l'étudiant " .  parent::getNom() . " habite à " . parent::getAdresse() . "<br> L'étudiant' suit le(s) cours " . self::getCoursSuivis() . " .<br>L'étudiant s'est inscrit le " . self::getDateInscription() ;
     }
 
-    // methode __toString
+    // Ajout de la methode __toString
     public function __toString()
     {
         return "<br>Ceci est la class fille Etudiant,  " . self::resume();
     }
 
-    // implement interface Affichable
+    // implement the methodes of interface Affichable
     public function afficheTableau()
     {
-        return "<br> L'étudiant suit le(s) cour(s)" . self::getCoursSuivis();
+        return "<br> L'étudiant suit le(s) cours " . self::getCoursSuivis();
     }
 
     public function afficheLigne()

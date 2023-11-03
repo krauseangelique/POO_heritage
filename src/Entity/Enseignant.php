@@ -45,21 +45,25 @@ final class Enseignant extends Personne implements Affichable
     }
 
     public function resume(){
-        return "la  personne " . $this->nom . " habite à " . $this->adresse . "et il donne le(s) cour(s)" .$this->coursDonnes;
+        // On ne retourne par $this->nom mais bien parent::getNom() afin de pouvoir prendre en compte des différences d'affichage sur les getter
+        // self est utilisé car coursDonnes est dans la class fille
+        return "l'enseignant " . parent::getNom() . " habite à " . parent::getAdresse() . "et il donne le(s) cours de " . self::getCoursDonnes();
     }
 
     // Ajout de la methode __toString
     public function __toString()
     {
-        echo "Ceci est la class fille Enseignant, " . self::resume();
+        return "<br>Ceci est la class fille Enseignant, " . self::resume();
     }
 
-    // implement Affichable
+    // implement the methodes of intervace Affichable
     public function afficheTableau()
     {
+        return "<br> L'enseignant donne le(s) cours " . self::getCoursDonnes();
     }
 
     public function afficheLigne()
     {
+        
     }
 }

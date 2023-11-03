@@ -5,6 +5,7 @@ use DateTime;
 
 final class Enseignant extends Personne implements Affichable
 {
+    // typehint des attributs: array, DateTime et int
     private array $coursDonnes;
     private DateTime $entreeService;
     private int $anciennete;

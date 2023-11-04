@@ -56,7 +56,7 @@ final class Enseignant extends Personne implements Affichable
         return "<br>Ceci est la class fille Enseignant, " . self::resume();
     }
 
-    // implement the methodes of intervace Affichable
+    // méthodes de l'interface Affichable
     public function afficheTableau()
     {
         return "<br> L'enseignant donne le(s) cours " . self::getCoursDonnes();

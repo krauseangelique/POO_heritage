@@ -21,21 +21,49 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     // j'instancie un nouvel objet
     $etudiant1 = new Etudiant;
     $etudiant1->setNom("Antony");
+    $etudiant1->setPrenom("Antony");
     $etudiant1->setAdresse("rue du  Village, 50");
+    $etudiant1->setCp("rue du  Village, 50");
+    $etudiant1->setPays("belgique");
     $etudiant1->setCoursSuivis(["Math","Français"]);
+    $etudiant1->setNiveau("troisième");
     $etudiant1->setDateInscription(new DateTime('2023-10-01'));
 
     // Affichage de ce que retourne la méthode resume(){}
     echo $etudiant1->resume();
+
     // ON ne peut pas faire l'écho d'un objet SAUF si la méthode __toString() est implémentée
     echo $etudiant1;
+
+    // Affichage de ce que retourne la méthode afficheTableau();
     echo $etudiant1->afficheTableau(); 
 
     echo "<br><br> Coucou l'enseignant ! <br>";
 
     // j'instancie un nouvel objet
     $enseignant1 = new Enseignant;
-    $enseignant1->setNom("Cesar");
+    $enseignant1->setNom("dupont");
+    $enseignant1->setPrenom("cesar");
+    $enseignant1->setAdresse("rue du  Village, 50");
+    $enseignant1->setCp("rue du  Village, 50");
+    $enseignant1->setPays("ouganda");
+    $enseignant1->setSociete("cuivre & zinc");
+    $enseignant1->setCoursDonnes(["Math", "Français"]);
+    $enseignant1->setEntreeService(new DateTime('2003-09-01'));
+    $enseignant1->setAnciennete(7);
+    
+
+    // Affichage de ce que retourne la méthode resume(){}
+    echo $etudiant1->resume();
+
+    // ON ne peut pas faire l'écho d'un objet SAUF si la méthode __toString() est implémentée
+    echo $etudiant1;
+
+    // Affichage de ce que retourne la méthode afficheTableau();
+    echo $etudiant1->afficheTableau();
+
+    echo "<br><br> Coucou l'enseignant ! <br>";
+
     
 
 

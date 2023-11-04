@@ -64,7 +64,7 @@ final class Etudiant extends Personne implements Affichable {
         return "<br>Ceci est la class fille Etudiant,  " . self::resume();
     }
 
-    // implement the methodes of interface Affichable
+    // méthodes de l'interface Affichable
     public function afficheTableau()
     {
         return "<br> L'étudiant suit le(s) cours " . self::getCoursSuivis();

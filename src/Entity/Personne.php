@@ -80,7 +80,7 @@ abstract class Personne
     Lors de l’héritage d’une classe abstraite, les méthodes déclarées comme abstraites dans la classe parent doivent obligatoirement être définies dans la classe enfant avec des signatures (nom et paramètres) correspondantes.
 
     */
-    // méthode abstraite qui retourne un résumé des infos de l'objet et c'est dans la class fille qu'on va indiquer le code de la fonction
+    // méthode abstraite qui retourne un résumé des infos de l'objet et c'est dans la class fille qu'on va indiquer le code de la fonction (dans la fille il ne faudra pas indiquer abstract) Donc abstract indique que l'implémentation se fera dans les filles.
     abstract public function resume();
 
 }

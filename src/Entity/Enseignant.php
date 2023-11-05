@@ -37,7 +37,7 @@ final class Enseignant extends Personne implements Affichable
     }
     public function setAnciennete(int $anciennete)
     {
-        $this->anciennete;
+        $this->anciennete = $anciennete;
     }
     public function getAnciennete()
     {

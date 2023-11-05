@@ -26,14 +26,16 @@ class PersonneManager {
     // création d'une personne
     public function create(Personne $object) {
         // récupération des données
+        $id = $object->getId();
         $nom = $object->getNom();
         $prenom = $object->getPrenom();
 
+
         // création sql
-        $sql = 'UPDATE personne
-                SET nom = "'.$nom.'",
-                    prenom = "'.$prenom.'"
-                WHERE id = '.$id;
+        $sql = "UPDATE personne
+                SET nom = '.$nom.',
+                    prenom = '.$prenom.'
+                WHERE id = $id";
 
         // Prepare statement
         $stmt = $this->getConnection()->prepare($sql);
@@ -45,7 +47,7 @@ class PersonneManager {
     // delete
     public function delete($id){
         // création sql
-        $sql = 'DELETE FROM personne WHERRE id ='.$id;
+        $sql = "DELETE FROM personne WHERRE id =$id";
 
         // Prepare statement
         $stmt = $this->getConnection()->prepare($sql);

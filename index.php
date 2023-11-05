@@ -20,11 +20,12 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     
     // j'instancie un nouvel objet
     $etudiant1 = new Etudiant;
-    $etudiant1->setNom("Antony");
+    $etudiant1->setNom("berben");
     $etudiant1->setPrenom("Antony");
     $etudiant1->setAdresse("rue du  Village, 50");
-    $etudiant1->setCp("rue du  Village, 50");
+    $etudiant1->setCp("4030");
     $etudiant1->setPays("belgique");
+    // $etudiant1->setSociete("");
     $etudiant1->setCoursSuivis(["Math","Français"]);
     $etudiant1->setNiveau("troisième");
     $etudiant1->setDateInscription(new DateTime('2023-10-01'));
@@ -36,7 +37,11 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     echo $etudiant1;
 
     // Affichage de ce que retourne la méthode afficheTableau();
-    echo $etudiant1->afficheTableau(); 
+    echo $etudiant1->afficheTableau();
+
+    echo "Affichage d'un étudiant : ";
+    // Affichage de ce que retourne la méthode afficheLigne();
+    echo $etudiant1->afficheLigne();
 
     echo "<br><br> Coucou l'enseignant ! <br>";
 
@@ -56,13 +61,11 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     // Affichage de ce que retourne la méthode resume(){}
     echo $etudiant1->resume();
 
-    // ON ne peut pas faire l'écho d'un objet SAUF si la méthode __toString() est implémentée
-    echo $etudiant1;
 
-    // Affichage de ce que retourne la méthode afficheTableau();
-    echo $etudiant1->afficheTableau();
 
-    echo "<br><br> Coucou l'enseignant ! <br>";
+
+
+    echo "<br> Coucou l'enseignant ! <br>";
 
     
 

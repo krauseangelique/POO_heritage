@@ -5,6 +5,7 @@ namespace Angelique\PooHeritage\Entity;
 abstract class Personne 
 {
     // attributs en visibilité protected pour être accessibles depuis l'intérieur de la classe et les classes qui héritent de la classe parente (notion d'héritage)
+    protected $id;
     protected $nom;
     protected $prenom;
     protected $adresse;
@@ -13,6 +14,14 @@ abstract class Personne
     protected $societe;
 
     // Accesseurs et mutateurs correspondants
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+    public function getId()
+    {
+        return $this->id;
+    }
     public function setNom($nom)
     {
         $this->nom = $nom;

@@ -1,0 +1,138 @@
+<?php
+
+namespace Angeliqie\PooHeritage\Manager;
+
+use Angelique\PooHeritage\Entity\Enseignant;
+use Angelique\PooHeritage\Manager\EntityManager;
+
+class EnseignantManager extends EntityManager
+{
+
+    // création d'un enseignant
+    public function create( $enseignant)
+    {
+        // récupération des données
+        $id = $enseignant->getId();
+        $nom = $enseignant->getNom();
+        $prenom = $enseignant->getPrenom();
+        $coursDonnes = $enseignant->getCoursDonnes();
+
+        $sql = "INSERT INTO Enseignant
+        (nom, prenom, coursDonnes)
+        VALUES ($nom, $prenom, $coursDonnes)";
+
+        // Prepare statement
+        $stmt = $this->getConnection()->prepare($sql);
+
+        // execute
+        $stmt->execute();
+    }
+
+    // update
+    public function update($enseignant)
+    {
+        // récupération des données
+        $id = $enseignant->getId();
+        $nom = $enseignant->getNom();
+        $prenom = $enseignant->getPrenom();
+        $coursDonnes = $enseignant->getCoursDonnes();
+
+        $sql = "UPDATE Enseignant
+                SET nom = '.$nom.',
+                    prenom = '.$prenom.',
+                    coursDonnes = '.$coursDonnes.'
+                WHERE id = $id";
+
+        // Prepare statement
+        $stmt = $this->getConnection()->prepare($sql);
+
+        // execute
+        $stmt->execute();
+    }
+
+    // delete
+    public function delete($id)
+    {
+        // création sql
+        $sql = "DELETE FROM Enseignant WHERE id =$id";
+
+        // Prepare statement
+        $stmt = $this->getConnection()->prepare($sql);
+
+        // execute
+        $stmt->execute();
+    }
+
+    // read
+    public function read($id)
+    {
+        // création sql
+        $sql = "SELECT * FROM Enseignant
+                WHERE id=$id";
+
+        // Prepare statement
+        $stmt = $this->getConnection()->prepare($sql);
+
+        // execute
+        $stmt->execute();
+
+        // fetch
+        // EXECUTION DE LA REQUETE SQL
+        $datas = $stmt->fetch(\PDO::FETCH_ASSOC); // FETCH_ASSOC est une constante de class  \PDO permet de sortir du Namespace de la class et aller chercher l'info directement dans le Namespace global de PHP 
+        // var_dump($datas);
+
+        // INSTANTIATION DE L'OBJET
+        $mon_enseignant = new Enseignant;
+        $mon_enseignant->setId($datas["id"]);
+        $mon_enseignant->setNom($datas["nom"]);
+        $mon_enseignant->setPrenom($datas["prenom"]);
+        // transformation string en tableau https://waytolearnx.com/2019/07/comment-transformer-une-chaine-de-caractere-en-tableau-en-php.html
+        $mon_enseignant->setCoursDonnes(explode(" ", $datas["coursDonnes"]));
+    
+        return $mon_enseignant;
+            
+    }
+
+    // read all
+    public function readAll()
+    {
+    // création sql
+    $sql = "SELECT * FROM Enseignant";
+
+    // Prepare statement
+    $stmt = $this->getConnection()->prepare($sql);
+
+    // execute
+    $stmt->execute();
+
+    // fetch
+    // EXECUTION DE LA REQUETE SQL
+    $datas = $stmt->fetch(\PDO::FETCH_ASSOC); // FETCH_ASSOC est une constante de class  \PDO permet de sortir du Namespace de la class et aller chercher l'info directement dans le Namespace global de PHP 
+        // var_dump($datas);
+
+        // déclaration de mon tableau d'enseignant
+    $tabEnseignant = [];
+    foreach ($datas as $key => $unEnseignant) {
+        
+       // $unEnseignant["id"];
+        //$unEnseignant["nom"];
+       // $unEnseignant["prenom"];
+       //$unEnseignant["coursDonnes"];
+
+        // mon objet enseignant
+        $enseignant = new Enseignant;
+        $enseignant->setId($unEnseignant["id"]);
+        $enseignant->setNom($unEnseignant["nom"]);
+        $enseignant->setCoursDonnes(explode(" ", $unEnseignant["coursDonnes"]));
+
+        // mettre les enseignants dans un tableau
+        $tabEnseignant[] = $enseignant;
+
+    }
+    return $tabEnseignant;
+
+    }
+
+
+
+}

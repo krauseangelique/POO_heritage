@@ -30,11 +30,28 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     $etudiant1->setNiveau("troisième");
     $etudiant1->setDateInscription(new DateTime('2023-10-01'));
 
+    // j'instancie un nouvel objet
+    $etudiant2 = new Etudiant;
+    $etudiant2->setNom("krause");
+    $etudiant2->setPrenom("Angelique");
+    $etudiant2->setAdresse("rue du Vieux Thier, 20");
+    $etudiant2->setCp("4400");
+    $etudiant2->setPays("belgique");
+    // $etudiant1->setSociete("");
+    $etudiant2->setCoursSuivis(["Français", "Allemand"]);
+    $etudiant2->setNiveau("deuxième");
+    $etudiant2->setDateInscription(new DateTime('2023-09-01'));
+
+
+
     // Affichage de ce que retourne la méthode resume(){}
     echo $etudiant1->resume();
 
-    // ON ne peut pas faire l'écho d'un objet SAUF si la méthode __toString() est implémentée
+    
+    // ON ne peut pas faire l'écho d'un objet SAUF si la méthode __toString() est implémentée . 2. Afficher un Etudiant et un Enseignant avec echo $monobjet ;
     echo $etudiant1;
+
+    // 3. Afficher un etudiant en faisant appel à afficheTableau et afficheLigne
 
     // Affichage de ce que retourne la méthode afficheTableau();
     echo $etudiant1->afficheTableau();
@@ -43,7 +60,7 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     // Affichage de ce que retourne la méthode afficheLigne();
     echo $etudiant1->afficheLigne();
 
-    echo "<br><br> Coucou l'enseignant ! <br>";
+    echo "<br><br>Afficher les resumés de Etudiant et Enseignant <br>";
 
     // j'instancie un nouvel objet
     $enseignant1 = new Enseignant;
@@ -57,15 +74,23 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     $enseignant1->setEntreeService(new DateTime('2003-09-01'));
     $enseignant1->setAnciennete(7);
     
-
+    // 2. Afficher un Etudiant et un Enseignant avec echo $monobjet ;
+    echo $enseignant1;
+    echo "<br>";
     // Affichage de ce que retourne la méthode resume(){}
     echo $etudiant1->resume();
 
 
+    // 1. Afficher les resumés de Etudiant et Enseignant en bouclant sur un tableau d’objets avec la methode resume
+    $tableauPersonnes = [$etudiant1, $etudiant2, $enseignant1];
+
+    foreach ($tableauPersonnes as $key => $personne) {
+        echo $personne->resume();
+        echo "<hr>";
+    }
 
 
 
-    echo "<br> Coucou l'enseignant ! <br>";
 
     
 

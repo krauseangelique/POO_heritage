@@ -82,6 +82,7 @@ abstract class Personne
     */
     // méthode abstraite qui retourne un résumé des infos de l'objet et c'est dans la class fille qu'on va indiquer le code de la fonction (dans la fille il ne faudra pas indiquer abstract) Donc abstract indique que l'implémentation se fera dans les filles.
     abstract public function resume();
+    
 
 }
 

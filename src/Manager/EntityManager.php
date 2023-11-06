@@ -2,7 +2,7 @@
 namespace Angelique\PooHeritage\Manager;
 
 //use des class
-
+use PDO;
 use Angelique\PooHeritage\Entity\Etudiant;
 use Angelique\PooHeritage\Entity\Enseignant;
 

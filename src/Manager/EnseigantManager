@@ -97,7 +97,7 @@ class EnseignantManager extends EntityManager
     public function readAll()
     {
     // création sql
-    $sql = "SELECT * FROM Enseignant";
+    $sql = "SELECT * FROM enseignant";
 
     // Prepare statement
     $stmt = $this->getConnection()->prepare($sql);

@@ -88,6 +88,29 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
         echo $personne->resume();
         echo "<hr>";
     }
+// connection à la DB PDO
+
+echo "<br>"
+
+
+    try {
+
+        $connexion = new \PDO('mysql:host=localhost;dbname=poo_heritage', 'root', ''); // création d'une instance de PDO
+
+        $objetPeronneManager = new PersonneManager($connexion); // il passe PersonneManager au constructeur
+
+
+        $personne1 = $objetPeronneManager->read(1); // read du premier id donc de la première personne DANS la DB
+
+        // var_dump($personne1);
+        // var_dump($personneManager);
+
+
+    } catch (Exception $exception) {
+        // var_dump($exception);
+        echo "<br>Le message d'erreur est : " . $exception->getMessage(); // je récupère ainsi le message d'erreur de php
+    }
+    
 
 
 

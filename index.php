@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+use Angeliqie\PooHeritage\Manager\EnseignantManager;
 use Angelique\PooHeritage\Entity\Personne;
 use Angelique\PooHeritage\Entity\Etudiant;
 use Angelique\PooHeritage\Entity\Enseignant;
@@ -90,14 +92,14 @@ require_once 'vendor/autoload.php'; // permet de CHARGER toutes les class de src
     }
 // connection à la DB PDO
 
-echo "<br>"
+echo "<br>";
 
 
     try {
 
         $connexion = new \PDO('mysql:host=localhost;dbname=poo_heritage', 'root', ''); // création d'une instance de PDO
 
-        $objetPeronneManager = new PersonneManager($connexion); // il passe PersonneManager au constructeur
+        $objetPeronneManager = new EnseignantManager($connexion); // il passe PersonneManager au constructeur
 
 
         $personne1 = $objetPeronneManager->read(1); // read du premier id donc de la première personne DANS la DB
